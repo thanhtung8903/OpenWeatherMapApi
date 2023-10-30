@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+</head>
+<body>
+<h1>Weather App</h1>
+<form action="#" th:action="@{/weather}" method="GET">
+    <input type="text" name="city" placeholder="Enter city name">
+    <button type="submit">Get Weather</button>
+</form>
+
+<h2>Weather Information:</h2>
+<div th:if="${weatherResponse != null}">
+    <p>City: <span th:text="${weatherResponse.cityName}"></span></p>
+    <p>Temperature: <span th:text="${weatherResponse.temperature}"></span></p>
+    <!-- Thêm các thông tin khác mà bạn muốn hiển thị -->
+</div>
+</body>
+</html>
