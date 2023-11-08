@@ -8,21 +8,18 @@
 <body>
 <div class="container">
     <h1 class="mt-5 mb-4">Weather App</h1>
-    <form th:action="@{/weather}" method="GET" class="mb-4">
-        <div class="input-group">
-            <input type="text" name="city" class="form-control" placeholder="Enter city name">
-            <button type="submit" class="btn btn-primary">Get Weather</button>
+    <form th:action="@{/weather}" method="get">
+        <div class="mb-3">
+            <input type="text" class="form-control" id="city" name="city" placeholder="Nhập tên thành phố">
         </div>
-    </form>
-
-    <h2 class="mt-4">Weather Information:</h2>
+        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
     <div th:if="${weatherDetail}" class="mt-4">
         <p th:text="'Thành phố: ' + ${weatherDetail.name}"></p>
         <p th:text="'Nhiệt độ: ' + ${weatherDetail.main.temp + '°C'}"></p>
         <p th:text="'Độ ẩm: ' + ${weatherDetail.main.humidity + '%'}"></p>
         <p th:text="'Gió: ' + ${weatherDetail.wind.speed + ' m/s'}"></p>
         <p th:text="'Mây: ' + ${weatherDetail.clouds.all + '%'}"></p>
-        <p th:text="'Weather Description: ' + ${weatherDetail.weather[0].description}"></p>
+        <p th:text="'Chi tiết: ' + ${weatherDetail.weather[0].description}"></p>
         <img th:src="@{'http://openweathermap.org/img/w/' + ${weatherDetail.weather[0].icon} + '.png'}" alt="Weather Icon" />
     </div>
 </div>
