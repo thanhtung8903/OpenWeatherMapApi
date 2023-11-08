@@ -1,51 +1,50 @@
 package com.example.demoopenweathermap.entity;
 
 public class Weather {
-    private String city;
-    private String country;
-    private String temperature;
+    private int id;
+    private String main;
+    private String description;
+    private String icon;
 
     public Weather() {
-
     }
 
-    public Weather(String city, String country, String temperature) {
-        this.city = city;
-        this.country = country;
-        this.temperature = temperature;
+    public Weather(int id, String main, String description, String icon) {
+        this.id = id;
+        this.main = main;
+        this.description = description;
+        this.icon = icon;
     }
 
-    public String getCity() {
-        return city;
+    public int getId() {
+        return id;
     }
 
-    public String getCountry() {
-        return country;
+    public String getMain() {
+        return main;
     }
 
-    public String getTemperature() {
-        return temperature;
+    public String getDescription() {
+        return description;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setMain(String main) {
+        this.main = main;
     }
 
-    public void setTemperature(String temperature) {
-        this.temperature = temperature;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("Weather{");
-        sb.append("city='").append(city).append('\'');
-        sb.append(", country='").append(country).append('\'');
-        sb.append(", temperature='").append(temperature).append('\'');
-        sb.append('}');
-        return sb.toString();
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
     }
 }
